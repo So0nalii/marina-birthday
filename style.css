@@ -1,153 +1,83 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-
-background:#090909;
-
-color:white;
-
-font-family:'Inter',sans-serif;
-
-height:100vh;
-
-overflow:hidden;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
+    font-family:'Montserrat',sans-serif;
+    background:#0b0b0b;
+    color:white;
+    overflow-x:hidden;
 }
 
-.intro{
-
-text-align:center;
-
-width:90%;
-
-max-width:900px;
-
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    background:
+        radial-gradient(circle at top,#2d2d2d 0%,#111 45%,#000 100%);
 }
 
-.gold-line{
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+}
 
-width:0;
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    width:90%;
+    max-width:900px;
+}
 
-height:2px;
-
-background:#D4AF37;
-
-margin:auto;
-
-animation:grow 2.5s forwards;
-
+.small-text{
+    letter-spacing:6px;
+    color:#d4af37;
+    text-transform:uppercase;
+    margin-bottom:20px;
+    font-size:14px;
 }
 
 h1{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:72px;
-
-font-weight:300;
-
-letter-spacing:6px;
-
-margin-top:60px;
-
-opacity:0;
-
-animation:fadeIn 2s forwards;
-
-animation-delay:1.5s;
-
+    font-family:'Cormorant Garamond',serif;
+    font-size:110px;
+    font-weight:600;
+    color:white;
 }
 
-p{
+.gold-line{
+    width:160px;
+    height:2px;
+    background:#d4af37;
+    margin:30px auto;
+}
 
-margin-top:25px;
-
-font-size:22px;
-
-color:#cccccc;
-
-opacity:0;
-
-animation:fadeIn 2s forwards;
-
-animation-delay:2.8s;
-
+.subtitle{
+    color:#d8d8d8;
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:50px;
 }
 
 button{
-
-margin-top:70px;
-
-padding:18px 60px;
-
-background:transparent;
-
-border:1px solid #D4AF37;
-
-color:#D4AF37;
-
-font-size:18px;
-
-cursor:pointer;
-
-transition:.4s;
-
-opacity:0;
-
-animation:fadeIn 2s forwards;
-
-animation-delay:4.5s;
-
+    background:transparent;
+    color:#d4af37;
+    border:2px solid #d4af37;
+    padding:18px 45px;
+    font-size:16px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.4s;
 }
 
 button:hover{
-
-background:#D4AF37;
-
-color:black;
-
-}
-
-@keyframes grow{
-
-0%{
-
-width:0;
-
-}
-
-100%{
-
-width:220px;
-
-}
-
-}
-
-@keyframes fadeIn{
-
-from{
-
-opacity:0;
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
+    background:#d4af37;
+    color:black;
+    transform:translateY(-3px);
 }
