@@ -1,7 +1,3 @@
-const button = document.getElementById("enterBtn");
-
-button.addEventListener("click",()=>{
-
-alert("Welcome Marina ❤️");
-
+document.getElementById("startBtn").addEventListener("click", function () {
+    alert("Welcome to Marina's story ✨");
 });
