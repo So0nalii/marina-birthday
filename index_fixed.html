@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Marina — Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="pianoAudio" src="piano.mp3" loop preload="none"></audio>
+<audio id="orchestralAudio" src="orchestral.mp3" loop preload="none"></audio>
+
+<canvas id="starfield"></canvas>
+
+<!-- LOADING -->
+<section id="loading" class="screen loading-screen">
+  <div class="sparkle-field" id="sparkleField"></div>
+  <p class="eyebrow">for someone who dreamed bigger</p>
+  <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+</section>
+
+<!-- INTRO -->
+<section id="intro" class="screen intro-screen">
+  <div class="sparkle-field small" id="introSparkles"></div>
+  <p class="eyebrow fade-in-item">a story, for</p>
+  <h1 class="name-reveal" id="nameReveal" aria-label="Marina"></h1>
+  <div class="gold-underline" id="goldUnderline"></div>
+  <button class="btn-ghost fade-in-item" id="beginBtn">Begin</button>
+</section>
+
+<main id="story" hidden>
+
+  <!-- CHAPTER 1 -->
+  <section class="screen chapter" id="chapter1">
+    <div class="chapter-inner reveal">
+      <p class="chapter-num">01</p>
+      <div class="chapter-photo">
+        <img src="IMG_2798.jpeg" alt="" loading="lazy">
+      </div>
+      <h2 class="chapter-title">The girl who dreamed bigger</h2>
+      <p class="chapter-text">In a small town in France, there was a girl who always believed there was something bigger waiting for her.</p>
+<button class='btn-ghost next-btn'>Continue</button>
+    </div>
+  </section>
+
+  <!-- CHAPTER 2 -->
+  <section class="screen chapter" id="chapter2">
+    <div class="chapter-inner reveal">
+      <p class="chapter-num">02</p>
+      <div class="chapter-photo">
+        <img src="IMG_2822.jpeg" alt="" loading="lazy">
+      </div>
+      <h2 class="chapter-title">Paris</h2>
+      <p class="chapter-text">Leaving home wasn't easy. But courage rarely is.</p>
+<button class='btn-ghost next-btn'>Continue</button>
+    </div>
+  </section>
+
+  <!-- CHAPTER 3 -->
+  <section class="screen chapter" id="chapter3">
+    <div class="chapter-inner reveal">
+      <p class="chapter-num">03</p>
+      <div class="chapter-photo">
+        <img src="IMG_3119.jpeg" alt="" loading="lazy">
+      </div>
+      <h2 class="chapter-title">Adventure</h2>
+      <p class="chapter-text">She never stopped saying yes. To cities. People. Dreams. Life.</p>
+<button class='btn-ghost next-btn'>Continue</button>
+    </div>
+  </section>
+
+  <!-- CHAPTER 4 -->
+  <section class="screen chapter" id="chapter4">
+    <div class="chapter-inner reveal">
+      <p class="chapter-num">04</p>
+      <div class="chapter-photo">
+        <img src="IMG_3245.jpeg" alt="" loading="lazy">
+      </div>
+      <h2 class="chapter-title">Friends</h2>
+      <p class="chapter-text">Some people unexpectedly become part of your story forever.</p>
+<button class='btn-ghost next-btn'>Continue</button>
+    </div>
+  </section>
+
+  <!-- CHAPTER 5 -->
+  <section class="screen chapter" id="chapter5">
+    <div class="chapter-inner reveal">
+      <p class="chapter-num">05</p>
+      <div class="chapter-photo">
+        <img src="IMG_3246.jpeg" alt="" loading="lazy">
+      </div>
+      <h2 class="chapter-title">Stockholm</h2>
+      <p class="chapter-text">Every city left a memory. Every memory became part of her.</p>
+<button class='btn-ghost next-btn'>Continue</button>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section class="screen game-screen" id="gameSection">
+    <div class="reveal game-wrap">
+      <p class="chapter-num">06</p>
+      <h2 class="chapter-title">Five words for Marina</h2>
+      <p class="chapter-text small">Use the arrow keys to walk. Collect all five stars.</p>
+
+      <canvas id="gameCanvas" width="360" height="360"></canvas>
+
+      <div class="word-tracker" id="wordTracker">
+        <span class="word-slot" data-word="Brave">Brave</span>
+        <span class="word-slot" data-word="Kind">Kind</span>
+        <span class="word-slot" data-word="Curious">Curious</span>
+        <span class="word-slot" data-word="Independent">Independent</span>
+        <span class="word-slot" data-word="Fearless">Fearless</span>
+      </div>
+
+      <button class="btn-ghost" id="gameStartBtn">Start</button>
+    </div>
+  </section>
+
+  <!-- GIFT -->
+  <section class="screen gift-screen" id="giftSection">
+    <div class="reveal">
+      <p class="eyebrow">for you</p>
+      <div class="gift-box" id="giftBox">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+        <div class="ribbon-v"></div>
+        <div class="ribbon-h"></div>
+        <div class="ribbon-bow">
+          <span></span><span></span>
+        </div>
+      </div>
+      <p class="chapter-text small muted-hint" id="giftHint">tap to open</p>
+    </div>
+    <canvas id="burstCanvas"></canvas>
+  </section>
+
+  <!-- BIRTHDAY REVEAL -->
+  <section class="screen birthday-screen" id="birthdaySection">
+    <div class="reveal">
+      <h2 class="big-title">Happy Birthday</h2>
+      <h2 class="big-title accent">Marina</h2>
+      <div class="cake" id="cake"></div>
+<button class="btn-ghost next-btn">Read Letter</button>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="screen letter-screen" id="letterSection">
+    <div class="reveal letter-wrap">
+      <p class="eyebrow">a letter</p>
+      <div class="letter-paper" id="letterPaper">
+        <p id="letterText" class="letter-text"></p>
+      </div>
+      <button class="btn-ghost tiny" id="skipLetterBtn">Show full letter</button>
+    </div>
+  </section>
+
+  <!-- ENDING -->
+  <section class="screen ending-screen" id="endingSection">
+    <div class="reveal">
+      <p class="ending-line">The best stories never really end.</p>
+      <p class="ending-credit">Made with love,<br>Sonali</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
